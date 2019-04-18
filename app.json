@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "list note",
-    "slug": "list note",
+    "slug": "list_note",
     "privacy": "public",
     "sdkVersion": "32.0.0",
     "platforms": [

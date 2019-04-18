@@ -1,12 +1,18 @@
 import React from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, Button, ScrollView } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity, Button, ScrollView, FlatList } from 'react-native';
+import Swipeout  from 'react-native-swipeout'
 
 import { Ionicons } from '@expo/vector-icons';
 
 
 const TodoList = ({todos, toggleTodo, toggleGot}) => (
     <ScrollView style={{ padding: 20, flexDirection: 'column' }}>
-        {todos.map(todo => 
+        {todos.map(todo =>
+        <Swipeout key={todo.id}
+            autoClose={true}
+            backgroundColor={'white'}
+            right={swipeoutBtns}
+        >
             <TouchableOpacity key={todo.id} onPress={() => toggleTodo(todo.id)}>
                 <View style={{flexDirection: 'row'}}>
                     <Text style={{
@@ -45,8 +51,21 @@ const TodoList = ({todos, toggleTodo, toggleGot}) => (
                     }
                 </Text> 
             </TouchableOpacity>
+        </Swipeout> 
+        
+            
         )}
     </ScrollView>
+    
 )
 
+
 export default TodoList;
+
+const activate = () => {
+    alert('doink');
+}
+
+var swipeoutBtns = [
+    {text: 'button', onPress: activate}
+]
