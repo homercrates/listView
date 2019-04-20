@@ -1,4 +1,4 @@
-import { ADD_TODO, TOGGLE_TODO, TOGGLE_GOT, SET_VISIBILITY_FILTER } from './actionTypes';
+import { ADD_TODO, TOGGLE_TODO, TOGGLE_GOT, DELETE_TODO, SET_VISIBILITY_FILTER } from './actionTypes';
 
 let nextId = 0;
 export const addTodo = (text, note, amount, measure) => ({
@@ -18,6 +18,11 @@ export const toggleTodo = (id) => ({
 
 export const toggleGot = (id) => ({
     type: TOGGLE_GOT,
+    id,
+})
+
+export const deleteTodo = (id) => ({
+    type: DELETE_TODO,
     id,
 })
 

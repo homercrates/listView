@@ -5,16 +5,18 @@ import Swipeout  from 'react-native-swipeout'
 import { Ionicons } from '@expo/vector-icons';
 
 
-const TodoList = ({todos, toggleTodo, toggleGot}) => (
+const TodoList = ({todos, toggleTodo, toggleGot, deleteTodo}) => (
     <ScrollView style={{ padding: 20, flexDirection: 'column' }}>
         {todos.map(todo =>
-        <Swipeout key={todo.id}
-            autoClose={true}
-            backgroundColor={'white'}
-            right={swipeoutBtns}
-        >
             <TouchableOpacity key={todo.id} onPress={() => toggleTodo(todo.id)}>
-                <View style={{flexDirection: 'row'}}>
+                <View style={{flexDirection: 'row', flex: 3, justifyContent: 'space-between', flexWrap: 'wrap'}}>
+                    <TouchableOpacity key={todo.id} onPress={() => toggleGot(todo.id)}>
+                        <Ionicons 
+                            name="md-checkmark" 
+                            size={12} 
+                            style={{color: '#de9595', padding: 10}} 
+                        />
+                    </TouchableOpacity>
                     <Text style={{
                         fontSize: 24,
                         backgroundColor: 'rgba(0,0,0, .02)',
@@ -31,14 +33,16 @@ const TodoList = ({todos, toggleTodo, toggleGot}) => (
                         {todo.amount}
                         {todo.measure}
                     </Text>
-                    <TouchableOpacity key={todo.id} onPress={() => toggleGot(todo.id)}>
-                        <Ionicons 
-                            name="md-checkmark" 
-                            size={12} 
-                            style={{color: '#de9595', padding: 10 }} 
-                        />
-                    </TouchableOpacity>
-                    
+                    <View>
+                        <TouchableOpacity 
+                            key={todo.id} 
+
+                            style={{alignItems: 'flex-end', flex: 1, right: 0}}
+                            onPress={() => deleteTodo(todo.id)}
+                        >
+                            <Text style={{color: 'red'}}>X</Text>
+                        </TouchableOpacity>
+                   </View>
                 </View>
                 
                 <Text style={{
@@ -51,21 +55,21 @@ const TodoList = ({todos, toggleTodo, toggleGot}) => (
                     }
                 </Text> 
             </TouchableOpacity>
-        </Swipeout> 
-        
             
         )}
     </ScrollView>
-    
+
 )
 
 
 export default TodoList;
 
-const activate = () => {
-    alert('doink');
-}
 
-var swipeoutBtns = [
-    {text: 'button', onPress: activate}
-]
+const styles = StyleSheet.create({
+    listBtnRight: {
+        flex: 1,
+        flexDirection: 'row',
+        justifyContent: 'flex-start',
+        alignItems: 'center'
+    }
+  });
