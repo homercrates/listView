@@ -3,6 +3,13 @@ React-Native task list inteneded for personal use.
 
 Will have a log in using a firebase back end to keep a grocery/task list synced.
 
+dependancies:
+react-native
+react-navigation
+react-redux
+redux
+
+
 added list items.  list item, notes, number, number denomination
 ![alt text](https://github.com/homercrates/listView/blob/master/assets/demo1.jpg)
 
