@@ -15,6 +15,7 @@ added list items.  list item, notes, number, number denomination
 
 
 if pressed on list name it will toggle the notes visable.
+
 ![alt text](https://github.com/homercrates/listView/blob/master/assets/demo2.jpg)
 
 
