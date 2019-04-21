@@ -4,6 +4,10 @@ React-Native task list inteneded for personal use.
 Will have a log in using a firebase back end to keep a grocery/task list synced.
 
 
-![alt text](https://github.com/homercrates/listView/blob/master/assets/demo1.png)
+![alt text](https://github.com/homercrates/listView/blob/master/assets/demo1.jpg)
+
+![alt text]()
+
+![alt text]()
 
 
