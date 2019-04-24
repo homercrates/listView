@@ -4,6 +4,7 @@ import { View, Text, StyleSheet, ImageBackground } from "react-native"
 import AddTodo from './containers/AddTodo';
 import VisibleTodos from './containers/VisibleTodos';
 import BackGround from '../assets/rainbackground.jpg';
+import ListScreen from './screens/ListScreen';
 
 class TodoApp extends Component {
 
@@ -15,6 +16,10 @@ class TodoApp extends Component {
 
                 <View>
                     <VisibleTodos />
+                </View>
+
+                <View>
+                    <ListScreen />
                 </View>
             </ImageBackground>
             </View>
